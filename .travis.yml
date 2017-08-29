@@ -1,0 +1,10 @@
+# Build settings for Travis CI
+
+# Which language are we using?
+language: r
+
+# Cache installed packages to speed up build times
+cache: packages
+
+# Arguments to pass to R CMD build
+r_build_args: --resave-data

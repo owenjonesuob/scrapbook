@@ -1,0 +1,4 @@
+# Print ISO-formatted timestamp, e.g. for use in "Last Modified" comments
+
+snippet iso
+	`r strftime(as.POSIXlt(Sys.time(), "UTC"), "%Y-%m-%d %H:%M:%S %z (%a, %d %b %Y)")`

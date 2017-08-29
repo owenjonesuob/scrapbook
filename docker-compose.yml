@@ -1,0 +1,26 @@
+# Automatically set up a docker container with certain configuration
+# Save a docker-compose.yml file in a directory, navigate there, then run
+# `docker-compose up -d`
+
+# Which version of docker-compose to use
+version: '2'
+
+# Services to run
+services:
+  # What to call this service
+  rstudio:
+    image:
+    # Which image to use, get them from DockerHub using `docker pull user/repo:tag`
+      - rocker/rstudio:3.4.0
+    ports:
+    # LHS: the port you use in the browser, i.e. localhost:xxx
+    # RHS: the port to connect to in the image (built into the image)
+      - "xxx:yyy"
+    volumes:
+    # Local directories to link into your containers
+    # "." is shorthand for "this folder where the docker-compose.yml file is"
+    # RHS is absolute filepath for where to put/what to call linked folder
+      - .:/home/rstudio/navigator
+
+# This whole file is roughly equivalent to running:
+# `docker run -d -p xxx:yyy -v /c/local/file/path:/home/remote/path rocer/rstudip:3.4.0`

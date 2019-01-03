@@ -1,0 +1,14 @@
+// Adapted from StackOverflow answer for Jupyter 5 here:
+// https://stackoverflow.com/questions/44216326/how-to-disable-auto-quotes-and-auto-brackets-in-jupyter-5-0
+
+// Add the following lines to ~/.jupyter/nbconfig/notebook.json
+
+{
+    "CodeCell": {
+      "cm_config": {
+        "autoCloseBrackets": false,
+        "autoCloseQuotes": false
+      }
+    }
+  }
+  
